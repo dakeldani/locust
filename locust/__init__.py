@@ -1,6 +1,6 @@
 from gevent import monkey
 
-# Disable patch in thread level for google.auth.transport.requests to work
+# Disable patch in thread and ssl for google.auth.transport.requests to work
 monkey.patch_all(thread=False,ssl=False)
 
 from .user.sequential_taskset import SequentialTaskSet
