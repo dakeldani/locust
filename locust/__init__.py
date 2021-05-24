@@ -1,6 +1,7 @@
 from gevent import monkey
 
-monkey.patch_all()
+# Disable patch in thread level for google.auth.transport.requests to work
+monkey.patch_all(thread=False)
 
 from .user.sequential_taskset import SequentialTaskSet
 from .user import wait_time
